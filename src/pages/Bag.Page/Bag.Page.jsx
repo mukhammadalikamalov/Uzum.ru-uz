@@ -1,4 +1,4 @@
-import { Container } from "@mui/material";
+import { Container, Grid } from "@mui/material";
 import React, { useEffect, useMemo, useState } from "react";
 import BagCard from "../../component/BagCard";
 import SearchAppBar from "../../component/Layout/Header";
@@ -21,12 +21,28 @@ const BagPage = () => {
 
   return (
     <>
-    <Container>
-    <SearchAppBar/>
-      {res && res.map((data) => <BagCard goods={data} key={data.id} />)}
-      {popProds.map((good) => (
-        <ProductCard good={good} key={good.id} />
-      ))}
+      <SearchAppBar />
+      <Container>
+        {res && res.map((data) => <BagCard goods={data} key={data.id} />)}
+        <Grid container spacing={2}>
+          {popProds.map((good) => (
+            <Grid
+              item
+              xs={12}
+              sm={6}
+              md={4}
+              lg={3}
+              xl={2.4}
+              key={good.id}
+              sx={{
+                flexBasis: { xs: "100%", sm: "50%", md: "33.33%", lg: "25%", xl: "20%" },
+                maxWidth: { xs: "100%", sm: "50%", md: "33.33%", lg: "25%", xl: "20%" }
+              }}
+            >
+              <ProductCard good={good} />
+            </Grid>
+          ))}
+        </Grid>
       </Container>
     </>
   );

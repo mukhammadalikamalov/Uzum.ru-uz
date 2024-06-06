@@ -29,19 +29,33 @@ const BagCard = ({ goods }) => {
   return (
     <>
       {showElement && (
-        <Box bgcolor={"#fff"} boxShadow={3} p={2} m={1} height="200px">
+        <Box
+          sx={{
+            bgcolor: "#fff",
+            boxShadow: 3,
+            p: 2,
+            m: 1,
+            height: "150px",
+            width: "600px", // Set the fixed width
+          }}
+        >
           <Box display="flex" alignItems="center" justifyContent="space-between" height="100%">
             <Box display="flex" alignItems="center">
               <Checkbox />
-              <Avatar src={goods.media[0]} alt={goods.title} style={{ width: '80px', height: '80px', marginLeft: '8px' }} />
-              <Box display="flex" flexDirection="column" justifyContent="flex-start" marginLeft="16px">
+              <Avatar src={goods.media[0]} alt={goods.title} sx={{ width: 80, height: 80, ml: 1 }} />
+              <Box display="flex" flexDirection="column" justifyContent="flex-start" ml={2}>
                 <Typography variant="h5">{goods.title.slice(0, 40)}</Typography>
               </Box>
             </Box>
-            <Button onClick={handleDelete} variant="contained" color="secondary" style={{ marginTop: '16px', backgroundColor: '#fff', color: '#000' }}>
+            <Button
+              onClick={handleDelete}
+              variant="contained"
+              color="secondary"
+              sx={{ mt: 2, bgcolor: "#fff", color: "#000" }}
+            >
               {isDeleting ? <CircularProgress size={24} /> : (
                 <>
-                  <DeleteIcon style={{ marginRight: '8px' }} />
+                  <DeleteIcon sx={{ mr: 1 }} />
                   Yo'q qilish
                 </>
               )}
