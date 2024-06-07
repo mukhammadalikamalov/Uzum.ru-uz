@@ -1,4 +1,4 @@
-import { Container, Grid } from "@mui/material";
+import { Container, Grid, Box, Typography } from "@mui/material";
 import React, { useEffect, useMemo, useState } from "react";
 import BagCard from "../../component/BagCard";
 import SearchAppBar from "../../component/Layout/Header";
@@ -22,6 +22,10 @@ const BagPage = () => {
   return (
     <>
       <SearchAppBar />
+      <Box sx={{ display: 'flex', marginLeft: '12%', marginTop: " 19px" }}>
+        <Typography variant='h5'> Savatingiz,  </Typography>
+        <Typography variant="h5" sx={{ color: 'lightgray' }}>1 ta mahsulot</Typography>
+      </Box>
       <Container>
         {res && res.map((data) => <BagCard goods={data} key={data.id} />)}
         <Grid container spacing={2}>

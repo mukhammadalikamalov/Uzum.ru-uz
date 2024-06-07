@@ -134,6 +134,29 @@ const ProductPage = () => {
                       ),
                     }}
                     sx={{ width: "160px" }}
+                  />    <TextField
+                    value={quantity}
+                    inputProps={{ min: 1, style: { textAlign: "center" } }}
+                    size="small"
+                    variant="outlined"
+                    readOnly
+                    InputProps={{
+                      startAdornment: (
+                        <InputAdornment position="start">
+                          <IconButton onClick={handleDecrement} size="small">
+                            <RemoveIcon />
+                          </IconButton>
+                        </InputAdornment>
+                      ),
+                      endAdornment: (
+                        <InputAdornment position="end">
+                          <IconButton onClick={handleIncrement} size="small">
+                            <AddIcon />
+                          </IconButton>
+                        </InputAdornment>
+                      ),
+                    }}
+                    sx={{ width: "160px" }}
                   />
                   <Typography variant="h6">{myProd.price} so'm</Typography>
 

@@ -13,7 +13,7 @@
     {
       "id": "9d42",
       "prod_id": "18",
-      "num": 2
+      "num": 3
     },
     {
       "id": "7d23",
@@ -309,7 +309,7 @@
         "https://img.mvideo.ru/Big/30065113bb2.jpg"
       ],
       "type": "PC",
-      "status": false
+      "status": true
     },
     {
       "id": "13",
@@ -421,7 +421,7 @@
         "https://img.mvideo.ru/Big/30063814bb2.jpg"
       ],
       "type": "PC",
-      "status": true
+      "status": false
     },
     {
       "id": "19",
