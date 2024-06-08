@@ -1,5 +1,5 @@
 import DeleteIcon from '@mui/icons-material/Delete';
-import { Avatar, Box, Button, Checkbox, CircularProgress, Divider, Typography, TextField, } from "@mui/material";
+import { Avatar, Box, Button, Checkbox, CircularProgress, Divider, Typography } from "@mui/material";
 import React, { useMemo, useState } from "react";
 import GetGoods from "../hooks/getGoods";
 import { useDeleteData, useEditData } from "../modules/context/https";
@@ -33,12 +33,11 @@ const BagCard = ({ goods }) => {
           sx={{
             bgcolor: "#fff",
             p: 2,
-            m: 1,
             height: "170px",
             width: "820px", // Set the fixed width
             border: "1px solid #ccc", // Add border with light gray color
             position: "relative", // Set position to relative
-            marginTop: "25px", // Add margin top to the Box
+            borderRadius: '8px', // Add rounded corners
           }}
         >
           <Checkbox sx={{ position: 'absolute', top: '8px', left: '14px' }} />
@@ -47,7 +46,7 @@ const BagCard = ({ goods }) => {
           <Typography variant='h8' sx={{ border: "1px solid #7000ff", position: 'absolute', left: '88%', fontSize: '13px', color: '#7000ff' }}>M06 8(Ertaga)</Typography>
           <Divider sx={{ bgcolor: '#E6E6E6', position: "absolute", top: "52px", width: "96%" }} /> {/* Horizontal line above the content */}
 
-          <Box display="flex" alignItems="center" justifyContent="space-between" height="100%" sx={{ marginTop: '12px' }}> {/* Apply negative top margin to the content */}
+          <Box display="flex" alignItems="center" justifyContent="space-between" height="100%" sx={{ marginTop: '12px' }}>
             <Box display="flex" alignItems="center">
               <Checkbox />
               <Avatar src={goods.media[0]} alt={goods.title} sx={{ width: 100, height: 90, ml: 1 }} />
